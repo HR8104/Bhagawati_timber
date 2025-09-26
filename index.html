@@ -32,6 +32,16 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html, body {
+        overflow-x: hidden;
+        max-width: 100%;
+        }
+    </style>
 </head>
 
 <body>
@@ -594,7 +604,6 @@
     </div>
     <!-- Footer End -->
 
-
     <!-- Back to Top -->
 
 
@@ -634,13 +643,60 @@
         });
 
     </script>
+    <script>
+        // Target the form using a class (assumes it's the only form in that section)
+        const quoteForm = document.querySelector('.quote form');
+
+        if (quoteForm) {
+            quoteForm.addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                // Get form field values by position
+                const inputs = quoteForm.querySelectorAll('input');
+                const textarea = quoteForm.querySelector('textarea');
+                const select = quoteForm.querySelector('select');
+
+                const name = inputs[0].value.trim();
+                const email = inputs[1].value.trim();
+                const mobile = inputs[2].value.trim();
+                const service = select.value.trim();
+                const note = textarea.value.trim();
+
+                // Validation (basic)
+                if (!name || !email || !mobile || service === "Select A Service") {
+                    alert("Please fill all required fields.");
+                    return;
+                }
+
+                // Format the WhatsApp message
+
+                const message = `*i just visited your website, here's my info.
+            Free Quote Request*
+            *Name:* ${name}
+            *Email:* ${email}
+            *Mobile:* ${mobile}
+            *Service:* ${service}
+            *Note:* ${note || 'N/A'}`;
+
+                // Organizer's WhatsApp number — change this!
+                const phoneNumber = '919409440195';
+
+                const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+
+                // Open WhatsApp chat in new tab
+                window.open(whatsappURL, '_blank');
+            });
+        }
+    </script>
+
+    <!-- Floating WhatsApp button -->
+    <a href="https://wa.me/919409440195?text=Hello%20Bhagawati%20Timber" target="_blank" rel="noopener noreferrer"
+        class="whatsapp-float" aria-label="Chat with us on WhatsApp">
+        <img class="whatsapp-icon" src="img/Whatsapp.png" alt="WhatsApp Chat">
+        <span class="whatsapp-label">Chat on WhatsApp</span>
+    </a>
+
 </body>
 
 </html>
 
-<!-- Floating WhatsApp button -->
-<a href="https://wa.me/917383199955?text=Hello%20Bhagawati%20Timber" target="_blank" rel="noopener noreferrer"
-    class="whatsapp-float" aria-label="Chat with us on WhatsApp">
-    <img class="whatsapp-icon" src="img/Whatsapp.png" alt="WhatsApp Chat">
-    <span class="whatsapp-label">Chat on WhatsApp</span>
-</a>
