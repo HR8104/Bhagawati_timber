@@ -70,63 +70,104 @@
 }
 
 /*** Navbar ***/
-/* General styles for navbar */
-.navbar {
-    font-family: Arial, sans-serif;
-    padding: 0;
-}
+/*** Navbar ***/
 
-.navbar-brand img {
-    height: 30px;
-}
-
-.navbar-toggler {
+/* Dropdown indicator (FontAwesome icon for dropdown) */
+.navbar .dropdown-toggle::after {
     border: none;
+    content: "\f107"; /* Downward arrow icon */
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    vertical-align: middle;
+    margin-left: 8px;
 }
 
-.navbar-nav .nav-link {
-    font-size: 16px;
-    padding: 10px 15px;
+/* General navbar styles */
+.navbar-light .navbar-nav .nav-link {
+    margin-right: 30px;  /* Spacing between links */
+    padding: 25px 0;
+    color: #FFFFFF;  /* Text color */
+    font-size: 15px;
+    font-weight: 500;
+    text-transform: uppercase;
+    outline: none;
 }
 
-.navbar-nav .nav-link.active {
-    color: #007bff; /* Change this to your active link color */
+/* Hover and active link states */
+.navbar-light .navbar-nav .nav-link:hover,
+.navbar-light .navbar-nav .nav-link.active {
+    color: var(--primary);  /* Active and hover link color */
 }
 
-.navbar-nav .nav-link:hover {
-    color: #0056b3;
+/* Navbar when collapsed on medium screens */
+@media (max-width: 991.98px) {
+    .navbar-light .navbar-nav .nav-link {
+        margin-right: 0;  /* No margin between links */
+        padding: 10px 0;   /* Adjusted padding for smaller screens */
+    }
+
+    .navbar-light .navbar-nav {
+        border-top: 1px solid #EEEEEE;  /* Divider between items */
+    }
 }
 
-/* Styling the 'Get A Quote' button */
-.btn-primary {
-    background-color: #007bff; /* Adjust this to your theme color */
-    border-color: #007bff;
-    padding: 10px 20px;
-    font-size: 16px;
+/* Navbar height and button adjustments */
+.navbar-light .navbar-brand,
+.navbar-light a.btn {
+    height: 75px;
 }
 
-.btn-primary:hover {
-    background-color: #0056b3;
-    border-color: #0056b3;
+/* Text color for navbar items */
+.navbar-light .navbar-nav .nav-link {
+    color: var(--dark);  /* Custom dark color */
+    font-weight: 500;
 }
 
-@media (max-width: 991px) {
+/* Sticky navbar animation */
+.navbar-light.sticky-top {
+    top: -100px;
+    transition: .5s;  /* Smooth transition when sticky */
+}
+
+@media (min-width: 992px) {
+    /* Dropdown menu styling for larger screens */
+    .navbar .nav-item .dropdown-menu {
+        display: block;
+        border: none;
+        margin-top: 0;
+        top: 150%;
+        opacity: 0;
+        visibility: hidden;
+        transition: .5s;
+    }
+
+    /* Show dropdown when hovered */
+    .navbar .nav-item:hover .dropdown-menu {
+        top: 100%;
+        visibility: visible;
+        transition: .5s;
+        opacity: 1;
+    }
+}
+
+/* Responsive styles for mobile */
+@media (max-width: 767px) {
+    /* Navbar toggler button for mobile */
     .navbar-toggler {
         display: block;
+        border: none;
     }
 
     .navbar-collapse {
-        display: none;
-        width: 100%;
-        background-color: white;
+        display: none;  /* Hide menu by default */
     }
 
     .navbar-collapse.show {
-        display: block;
+        display: block;  /* Show menu when toggled */
     }
 
     .navbar-nav {
-        flex-direction: column;
+        flex-direction: column;  /* Stack items vertically */
         text-align: center;
     }
 
@@ -137,34 +178,17 @@
     .navbar-nav .nav-link {
         padding: 15px 0;
         font-size: 18px;
-        border-top: 1px solid #f0f0f0;
-    }
-
-    .navbar-nav .nav-link:first-child {
-        border-top: none;
     }
 
     .navbar-nav .nav-link.active {
-        color: #007bff;
+        color: var(--primary);  /* Active link color */
     }
 
+    /* 'Get A Quote' button for mobile */
     .btn-primary.d-none.d-lg-block {
         display: block;
         margin-top: 15px;
         width: 100%;
-    }
-}
-
-/* For mobile view (Less than 576px) */
-@media (max-width: 575px) {
-    .btn-primary.d-none.d-lg-block {
-        width: 100%;
-        padding: 12px 0;
-        font-size: 18px;
-    }
-
-    .navbar-nav .nav-link {
-        font-size: 18px;
     }
 }
 
