@@ -70,72 +70,101 @@
 }
 
 /*** Navbar ***/
-.navbar .dropdown-toggle::after {
+/* General styles for navbar */
+.navbar {
+    font-family: Arial, sans-serif;
+    padding: 0;
+}
+
+.navbar-brand img {
+    height: 30px;
+}
+
+.navbar-toggler {
     border: none;
-    content: "\f107";
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-    vertical-align: middle;
-    margin-left: 8px;
 }
 
-.navbar-light .navbar-nav .nav-link {
-    margin-right: 30px;
-    padding: 25px 0;
-    color: #FFFFFF;
-    font-size: 15px;
-    font-weight: 500;
-    text-transform: uppercase;
-    outline: none;
+.navbar-nav .nav-link {
+    font-size: 16px;
+    padding: 10px 15px;
 }
 
-.navbar-light .navbar-nav .nav-link:hover,
-.navbar-light .navbar-nav .nav-link.active {
-    color: var(--primary);
+.navbar-nav .nav-link.active {
+    color: #007bff; /* Change this to your active link color */
 }
 
-@media (max-width: 991.98px) {
-    .navbar-light .navbar-nav .nav-link  {
-        margin-right: 0;
-        padding: 10px 0;
-    }
-
-    .navbar-light .navbar-nav {
-        border-top: 1px solid #EEEEEE;
-    }
+.navbar-nav .nav-link:hover {
+    color: #0056b3;
 }
 
-.navbar-light .navbar-brand,
-.navbar-light a.btn {
-    height: 75px;
+/* Styling the 'Get A Quote' button */
+.btn-primary {
+    background-color: #007bff; /* Adjust this to your theme color */
+    border-color: #007bff;
+    padding: 10px 20px;
+    font-size: 16px;
 }
 
-.navbar-light .navbar-nav .nav-link {
-    color: var(--dark);
-    font-weight: 500;
+.btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
 }
 
-.navbar-light.sticky-top {
-    top: -100px;
-    transition: .5s;
-}
-
-@media (min-width: 992px) {
-    .navbar .nav-item .dropdown-menu {
+@media (max-width: 991px) {
+    .navbar-toggler {
         display: block;
-        border: none;
-        margin-top: 0;
-        top: 150%;
-        opacity: 0;
-        visibility: hidden;
-        transition: .5s;
     }
 
-    .navbar .nav-item:hover .dropdown-menu {
-        top: 100%;
-        visibility: visible;
-        transition: .5s;
-        opacity: 1;
+    .navbar-collapse {
+        display: none;
+        width: 100%;
+        background-color: white;
+    }
+
+    .navbar-collapse.show {
+        display: block;
+    }
+
+    .navbar-nav {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .navbar-nav .nav-item {
+        width: 100%;
+    }
+
+    .navbar-nav .nav-link {
+        padding: 15px 0;
+        font-size: 18px;
+        border-top: 1px solid #f0f0f0;
+    }
+
+    .navbar-nav .nav-link:first-child {
+        border-top: none;
+    }
+
+    .navbar-nav .nav-link.active {
+        color: #007bff;
+    }
+
+    .btn-primary.d-none.d-lg-block {
+        display: block;
+        margin-top: 15px;
+        width: 100%;
+    }
+}
+
+/* For mobile view (Less than 576px) */
+@media (max-width: 575px) {
+    .btn-primary.d-none.d-lg-block {
+        width: 100%;
+        padding: 12px 0;
+        font-size: 18px;
+    }
+
+    .navbar-nav .nav-link {
+        font-size: 18px;
     }
 }
 
@@ -637,3 +666,4 @@
 .modal-footer {
     border-top: 1px solid #ddd;
 }
+
