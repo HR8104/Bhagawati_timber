@@ -77,18 +77,74 @@
     <!-- Navbar End -->
 
     <!-- Page Banner Start -->
-    <div class="row align-items-center justify-content-center" style="min-height: 10vh;">
-        <!-- Logo / Image -->
-        <div class="col-12 col-md-6 text-center mb-4 mb-md-0 d-flex justify-content-center align-items-center">
-            <img src="img/header.png" alt="Bhagawati Timbers Logo" style="width: 100%; max-width: 200px; height: auto;">
-        </div>
-        <!-- Text -->
-        <div class="col-12 col-md-6 text-center px-4 d-flex justify-content-left align-items-center">
-            <h1 class="display-6 display-md-4" style="font-weight: bold; font-size: 2.5rem; font-family: 'Times New Roman', Times, serif; white-space: nowrap; color: #333; max-width: 500px; text-align: left;">
-                Bhagawati Timber's
-            </h1>
-        </div>
+    <div class="container-fluid page-header py-5 mb-5" style="background-color: #fff;">
+    <div class="row align-items-center justify-content-center" style="min-height: 40vh;">
+
+    <!-- Logo / Image -->
+    <div class="col-12 col-md-6 d-flex justify-content-center align-items-center">
+      <img src="img/header.png" alt="Bhagawati Timbers Logo"
+           style="width: 100%; max-width: 300px; height: auto;">
     </div>
+
+    <!-- Text -->
+    <div class="col-12 col-md-6 d-flex justify-content-center align-items-center">
+      <div class="text-container text-center text-md-start">
+        <h1 class="brand-heading">
+          <span class="word bhagawati">Bhagawati</span><br>
+          <span class="word timbers">Timber's</span>
+        </h1>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<style>
+  .brand-heading {
+    font-family: 'Times New Roman', Times, serif;
+    line-height: 0.9;
+    color: #333;
+    margin: 0;
+  }
+
+  .brand-heading .word {
+    display: inline-block;
+    margin: 0;
+  }
+
+  .brand-heading .bhagawati {
+    font-size: 10vw; /* Responsive scaling on mobile */
+  }
+
+  .brand-heading .timbers {
+    font-size: 10vw; /* Responsive scaling on mobile */
+    margin-left: 0.2em; /* Align left below "Bhagawati" */
+  }
+
+  @media (min-width: 768px) {
+    .brand-heading .bhagawati {
+      font-size: 4rem;
+    }
+
+    .brand-heading .timbers {
+      font-size: 4rem;
+      margin-left: calc(8ch); /* Indent Timber's to align with Bhagawati width */
+    }
+  }
+
+  @media (min-width: 1200px) {
+    .brand-heading .bhagawati {
+      font-size: 8rem;
+    }
+
+    .brand-heading .timbers {
+      font-size: 6.5rem;
+      margin-left: calc(8ch); /* Adjust to match 'Bhagawati' length visually */
+    }
+  }
+</style>
+
+
 
     <!-- Page Banner End -->
 
@@ -395,11 +451,13 @@
                     </div>
                 </div>
                 <div class="col-lg-6 pe-lg-0" style="min-height: 400px;">
-                    <div class="position-relative h-100">
-                        <img class="position-absolute img-fluid w-100 h-100" src="img/Logo.jpg"
-                            style="object-fit: cover;" alt="">
-                    </div>
-                </div>
+        <div class="position-relative h-100 d-flex justify-content-center align-items-center">
+            <img src="img/header.png" alt="Logo"
+                class="img-fluid"
+                style="object-fit: scale-down; max-width: 80%; max-height: 100%;">
+        </div>
+</div>
+
             </div>
         </div>
     </div>
@@ -512,9 +570,9 @@
                                 <div class="col-12 col-sm-6">
                                     <select class="form-select border-0" style="height: 55px;">
                                         <option selected>Select A Service</option>
-                                        <option value="1">Quotation</option>
-                                        <option value="2">Products Details</option>
-                                        <option value="3">Let's meet</option>
+                                        <option value="Quotation">Quotation</option>
+                                        <option value="Products Details">Products Details</option>
+                                        <option value="Let's Meet">Let's meet</option>
                                     </select>
                                 </div>
                                 <div class="col-12">
@@ -668,7 +726,7 @@
             *Note:* ${note || 'N/A'}`;
 
                 // Organizer's WhatsApp number — change this!
-                const phoneNumber = '919409440195';
+                const phoneNumber = '919427543402';
 
                 const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
@@ -679,7 +737,7 @@
     </script>
 
     <!-- Floating WhatsApp button -->
-    <a href="https://wa.me/919409440195?text=Hello%20Bhagawati%20Timber" target="_blank" rel="noopener noreferrer"
+    <a href="https://wa.me/919427543402?text=Hello%20Bhagawati%20Timber" target="_blank" rel="noopener noreferrer"
         class="whatsapp-float" aria-label="Chat with us on WhatsApp">
         <img class="whatsapp-icon" src="img/Whatsapp.png" alt="WhatsApp Chat">
         <span class="whatsapp-label">Chat on WhatsApp</span>
