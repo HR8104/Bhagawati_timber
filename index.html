@@ -77,7 +77,7 @@
     <!-- Navbar End -->
 
     <!-- Page Banner Start -->
-    <div class="container-fluid page-header py-5 mb-5" style="background-color: #fff;">
+    <!-- <div class="container-fluid page-header py-5 mb-5" style="background-color: #fff;"> -->
     <div class="row align-items-center justify-content-center" style="min-height: 40vh;">
 
     <!-- Logo / Image -->
@@ -97,7 +97,7 @@
     </div>
 
   </div>
-</div>
+<!-- </div> -->
 
 <style>
   .brand-heading {
@@ -121,13 +121,33 @@
     margin-left: 0.2em; /* Align left below "Bhagawati" */
   }
 
+  /* Hide brand heading on mobile */
+  @media (max-width: 767px) {
+    .brand-heading {
+      display: none;
+    }
+
+    /* Adjust logo size on mobile */
+    .logo {
+      max-width: 100%; /* Increase the size to fill the gap */
+      height: 100px;
+    }
+
+    .page-header {
+      padding-top: 10vh; /* Adjust padding to give more room */
+      padding-bottom: 10vh; /* Adjust bottom padding to balance the space */
+    }
+  }
+
   @media (min-width: 768px) {
     .brand-heading .bhagawati {
       font-size: 4rem;
+      padding-right: 20px;
     }
 
     .brand-heading .timbers {
       font-size: 4rem;
+      padding-right: 20px;
       margin-left: calc(8ch); /* Indent Timber's to align with Bhagawati width */
     }
   }
@@ -143,7 +163,6 @@
     }
   }
 </style>
-
 
 
     <!-- Page Banner End -->
