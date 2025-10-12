@@ -646,8 +646,8 @@
 
 @media screen and (max-width: 768px) {
     .contact-buttons {
-        width: 50%; /* Slightly larger width on tablets and smaller screens */
-        height: 30%;
+        width: 60px; /* Slightly larger width on tablets and smaller screens */
+        height: 40px
     }
 
     .contact-buttons .button {
@@ -663,8 +663,8 @@
 
 @media screen and (max-width: 480px) {
     .contact-buttons {
-        width: 90%; /* Take almost full width on very small screens */
-        height: 100px;
+        width: 60px; /* Take almost full width on very small screens */
+        height: 35px;
     }
 
     .contact-buttons .button {
