@@ -653,6 +653,11 @@
         flex: 0 0 45%; /* Make buttons take up 45% of the container's width */
         max-width: 45%; /* Limit the button's max-width */
     }
+
+    .contact-buttons .button img {
+        width: 32px; /* Slightly smaller images on smaller screens */
+        height: 50px;
+    }
 }
 
 @media screen and (max-width: 480px) {
@@ -664,5 +669,10 @@
         flex: 0 0 90%; /* Buttons will stack and take up 90% of the container width */
         max-width: 90%; /* Limit the max-width */
         margin-bottom: 10px; /* Space between stacked buttons */
+    }
+
+    .contact-buttons .button img {
+        width: 28px; /* Even smaller images on very small screens */
+        height: 40px;
     }
 }
