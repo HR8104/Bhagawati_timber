@@ -612,30 +612,57 @@
 }
 
 
-
 .contact-buttons {
     margin-top: 20px;
-    width: 40%;
+    width: 60%; /* Default width */
     display: flex;
     justify-content: center; 
     gap: 10px;
     margin-left: auto;
     margin-right: auto;
+    flex-wrap: wrap; /* Allows buttons to wrap on smaller screens */
 }
+
 .contact-buttons .button {
     flex: 1;
     padding: 10px;
     font-size: 16px;
-    /* color: #fff; */
-    /* background-color: var(--primary); */
-    /* border: none; */
-    /* border-radius: 5px; */
     cursor: pointer;
     transition: background-color 0.3s ease;
+    text-align: center; /* Center the image within the button */
+    border: none; /* Remove default button borders */
+    display: inline-block; /* Make sure the image is aligned properly */
+    background-color: transparent; /* Transparent background for the button */
+    border-radius: 8px;
 }
+
 .contact-buttons .button:hover {
     background-color: #8c5e32; /* Darker shade on hover */
 }
+
 .contact-buttons .button:active {
     background-color: #7a4f2a; /* Even darker shade on click */
+}
+
+@media screen and (max-width: 768px) {
+    .contact-buttons {
+        width: 80%; /* Slightly larger width on tablets and smaller screens */
+    }
+
+    .contact-buttons .button {
+        flex: 0 0 45%; /* Make buttons take up 45% of the container's width */
+        max-width: 45%; /* Limit the button's max-width */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .contact-buttons {
+        width: 90%; /* Take almost full width on very small screens */
+    }
+
+    .contact-buttons .button {
+        flex: 0 0 90%; /* Buttons will stack and take up 90% of the container width */
+        max-width: 90%; /* Limit the max-width */
+        margin-bottom: 10px; /* Space between stacked buttons */
+    }
 }
