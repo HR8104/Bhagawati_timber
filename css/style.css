@@ -611,40 +611,87 @@
     border-top: 1px solid #ddd;
 }
 
+/* Reach out to us section */
+.reach-out-section {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #f8f9fa; /* Light background for contrast */
+}
+
+.reach-out-section h2 {
+    font-size: 2.5rem;
+    color: var(--dark);
+    margin-bottom: 30px;
+    font-weight: 700;
+}
 
 .contact-buttons {
-    margin-top: 20px;
-    width: 60%; /* Default width */
     display: flex;
-    justify-content: center; 
-    gap: 10px;
-    margin-left: auto;
-    margin-right: auto;
-    flex-wrap: wrap; /* Allows buttons to wrap on smaller screens */
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap; /* Allow wrapping on small screens */
 }
 
 .contact-buttons .button {
-    flex: 1;
-    padding: 10px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    text-align: center; /* Center the image within the button */
-    border: none; /* Remove default button borders */
-    display: inline-block; /* Make sure the image is aligned properly */
-    background-color: transparent; /* Transparent background for the button */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #fff;
+    background-color: var(--primary);
+    border: none;
     border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    min-width: 180px; /* Minimum width for consistency */
 }
 
 .contact-buttons .button:hover {
     background-color: #8c5e32; /* Darker shade on hover */
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
-.contact-buttons .button:active {
-    background-color: #7a4f2a; /* Even darker shade on click */
+.contact-buttons .button i {
+    margin-right: 10px;
 }
+
+/* Responsive adjustments */
 @media (max-width: 768px) {
-    .contact-buttons {
-        width: 100%; /* Full width on smaller screens */
+    .reach-out-section h2 {
+        font-size: 2rem;
+        margin-bottom: 20px;
     }
-}   
+
+    .contact-buttons {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .contact-buttons .button {
+        width: 100%;
+        max-width: 300px;
+        padding: 12px 20px;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .reach-out-section {
+        padding: 30px 15px;
+    }
+
+    .reach-out-section h2 {
+        font-size: 1.8rem;
+    }
+
+    .contact-buttons .button {
+        padding: 10px 15px;
+        font-size: 14px;
+    }
+}
+/* End of Template CSS */
