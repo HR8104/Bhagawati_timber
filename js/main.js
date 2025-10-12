@@ -101,3 +101,12 @@
     
 })(jQuery);
 
+  // Function to initiate a call
+    function makeCall() {
+      window.location.href = 'tel:+919427543402';  // Replace with the desired phone number
+    }
+
+    // Function to open the default email client
+    function sendEmail() {
+      window.location.href = 'mailto:bhagawati.halol@gmail.com?subject=Inquiry';  // Replace with your email address
+    }
